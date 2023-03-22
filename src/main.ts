@@ -1,9 +1,11 @@
-import { Controller, Module, Get } from '@nestjs/common';
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
 
-@Controller() // Decorator for the class to tell nest that this is a controller... handles and routes incoming requests
-class AppRouter {
-    @Get() // Anytime someone makes a get request to the root of the application, this function will be called
-    getRootRoute() {
-        return 'hi there!';
-    }
+// Bootstrap function to create the nest application
+// We define then immediately call the function
+async function bootstrap() {
+    // Creates nest application out of module
+    const app = await NestFactory.create(AppModule);
+    await app.listen(3000);
 }
+bootstrap();
