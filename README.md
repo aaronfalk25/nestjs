@@ -9,3 +9,6 @@ cd ./scratch
 npm i
 npx ts-node-dev src/main.ts
 ```
+
+Once these commands are run, the app should be listening on port 3000 (http://localhost:3000/).
+This project uses simple routing to differentiate between two controllers. Go bewteen http://localhost:3000/app/hi and http://localhost:3000/app/bye to see this in action.
